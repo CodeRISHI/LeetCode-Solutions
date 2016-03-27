@@ -12,14 +12,6 @@ var binarySearchTree = function(value){
 var root = new binarySearchTree();
 
 var maxDepth = function(root) {
-  // //if no root
-  // if (root === null) {
-  //   //depth is 0
-  //   return 0;
-  // } else {
-  //   return Math.max(maxDepth(root.left), maxDepth(root.right)) + 1;
-  // }
-
   //if no root - base case
   if (root === null) {
     return 0;

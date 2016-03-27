@@ -37,3 +37,15 @@ var invertTree = function(root) {
   //return root
   return root;
 };
+
+//TEST
+function TreeNode(val) {
+  this.val = val;
+  this.left = this.right = null;
+}
+
+var newTree = new TreeNode(root.val);
+newTree.left = invertTree(root.right);
+newTree.right = invertTree(root.left);
+
+console.log(invertTree(newTree));
