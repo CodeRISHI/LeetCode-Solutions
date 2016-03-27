@@ -4,40 +4,49 @@ var singleNumber = function(nums) {
   //declare result var
   var result = null;
 
-  //sort array
-  var results = nums.sort(function(a, b) {
-      return a - b;
-  });
-    
-  //temp array to store duplicates
-  var tempArr = [];
-    
-  //edge case
-  if (results.length === 1) {
-      return results[0];
-  }
-  
-  //iterate through array and check for duplicates
-  for (var i = 0; i < results.length; i++) {
-      //if contiguous numbers are duplicates
-    if (results[i+1] === results[i]) {
-      //push into tempArr
-      tempArr.push(results[i]);
-      //remove duplicates in results
-      results.splice(i, 1);
+  //using XOR
+    //iterate through nums
+    for (var i = 0; i < nums.length; i++) {
+      //use XOR to compare each number while adding to result
+      result ^= nums[i];
     }
-  }
+    //return result
+    return result;
 
-  //compare tempArr and results
-  for (var j = 0; j < tempArr.length; j++) {
-    //check if value exists in tempArr
-    if (tempArr.indexOf(results[j]) === -1) {
-      //odd one out is result
-      result = results[j];
-    }  
-  }
+  // //sort array
+  // var results = nums.sort(function(a, b) {
+  //     return a - b;
+  // });
     
-  return result;
+  // //temp array to store duplicates
+  // var tempArr = [];
+    
+  // //edge case
+  // if (results.length === 1) {
+  //     return results[0];
+  // }
+  
+  // //iterate through array and check for duplicates
+  // for (var i = 0; i < results.length; i++) {
+  //     //if contiguous numbers are duplicates
+  //   if (results[i+1] === results[i]) {
+  //     //push into tempArr
+  //     tempArr.push(results[i]);
+  //     //remove duplicates in results
+  //     results.splice(i, 1);
+  //   }
+  // }
+
+  // //compare tempArr and results
+  // for (var j = 0; j < tempArr.length; j++) {
+  //   //check if value exists in tempArr
+  //   if (tempArr.indexOf(results[j]) === -1) {
+  //     //odd one out is result
+  //     result = results[j];
+  //   }  
+  // }
+    
+  // return result;
 };
 
 //TESTS

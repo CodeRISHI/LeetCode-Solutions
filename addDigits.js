@@ -19,12 +19,9 @@ var addDigits = function(num) {
     }
 
     //recurse through num digits
-    addDigits(sum);
+    return addDigits(sum);
   }
 };
 
-console.log(addDigits(38)); //2 --> returns //undefined
-console.log(addDigits(9876)); //3 --> returns //undefined
-
-//RETURNS UNDEFINED!
-//not sure why it's doing that - the num that's being returned is a 'number' and I've console logged in several places to confirm that the actual value is '2' and '3' for the test case.
+console.log(addDigits(38)); //2 
+console.log(addDigits(9876)); //3
